@@ -1,14 +1,17 @@
 "use client"; // Ensure this file is used only on the client side
 
 import { useUser } from "@clerk/nextjs";
+import Image from "next/image"; // Import Image component
 
 function GifDisplay() {
   const { isSignedIn } = useUser();
   return !isSignedIn ? (
-    <img
+    <Image
       src="/images/video-call3.gif"
       alt="Animated GIF"
-      className="w-1/2 max-w-full h-auto rounded-lg" // You can adjust the width here as needed
+      width={700} // Adjust width as needed
+      height={280} // Height is auto to maintain aspect ratio
+      className="rounded-lg" // You can adjust the styling here
     />
   ) : null;
 }

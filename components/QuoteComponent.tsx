@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { useEffect, useState } from 'react';
 
 const QuoteComponent = () => {
@@ -8,7 +8,7 @@ const QuoteComponent = () => {
   useEffect(() => {
     const fetchQuote = async () => {
       try {
-        const url ="https://zenquotes.io/api/random/";
+        const url = "https://zenquotes.io/api/random/";
         const response = await fetch(url);
         const data = await response.json();
         if (data && data.length > 0) {
@@ -25,11 +25,10 @@ const QuoteComponent = () => {
 
   return (
     <div className="">
-   
       {quote && (
         <blockquote className="mt-4 text-lg italic">
-          "{quote}"
-          <footer className="mt-2 ">- {author}</footer>
+          &ldquo;{quote}&rdquo;
+          <footer className="mt-2">- {author}</footer>
         </blockquote>
       )}
     </div>
