@@ -63,16 +63,16 @@ ConnectR is a video conferencing tool developed using Next.js and TypeScript. It
 4. **Set Environment Variables in .env File**:
 Create a new file named `.env` in the root of your project and add the following content:
 
-```env
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
-CLERK_SECRET_KEY=
+   ```env
+   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+   CLERK_SECRET_KEY=
 
-NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
-NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+   NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+   NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
 
-NEXT_PUBLIC_STREAM_API_KEY=
-STREAM_SECRET_KEY=
-```
+   NEXT_PUBLIC_STREAM_API_KEY=
+   STREAM_SECRET_KEY=
+   ```
 
 5. **Run the Application**:
     ```bash
@@ -83,7 +83,7 @@ STREAM_SECRET_KEY=
 
 - **[Clerk](https://clerk.dev/)**
 - **[getstream](https://getstream.io/)**
-- **[shadcn](https://shadcn.dev/)**
+- **[shadcn](https://ui.shadcn.com/)**
 - **[Tailwind CSS](https://tailwindcss.com/)**
 - **[Next.js](https://nextjs.org/)**
 - **[TypeScript](https://www.typescriptlang.org/)**
