@@ -23,8 +23,9 @@ import Loader from './Loader';
 import EndCallButton from './EndCallButton';
 import { cn } from '@/lib/utils';
 import { Button } from './ui/button';
-import { toast } from './ui/use-toast';
+
 import { useUser } from '@clerk/nextjs';
+import { useToast } from './ui/use-toast';
 
 type CallLayoutType = 'grid' | 'speaker-left' | 'speaker-right';
 
@@ -39,6 +40,7 @@ const MeetingRoom = () => {
   const { user } = useUser();
   const meetingId = user?.id;
   const meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${meetingId}?personal=true`;
+  const { toast } = useToast();
 
   // for more detail about types of CallingState see: https://getstream.io/video/docs/react/ui-cookbook/ringing-call/#incoming-call-panel
   const callingState = useCallCallingState();
