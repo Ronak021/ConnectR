@@ -13,6 +13,7 @@ import { Textarea } from './ui/textarea';
 import ReactDatePicker from 'react-datepicker';
 import { useToast } from './ui/use-toast';
 import { Input } from './ui/input';
+import { useGetCallById } from '@/hooks/useGetCallByID';
 
 const initialValues = {
   dateTime: new Date(),
@@ -65,6 +66,31 @@ const MeetingTypeList = () => {
     }
   };
 
+
+   
+
+   
+    const meetingId = user?.id;
+  
+    const { call } = useGetCallById(meetingId!);
+  
+    const startRoom = async () => {
+      if (!client || !user) return;
+  
+      const newCall = client.call("default", meetingId!);
+  
+      if (!call) {
+        await newCall.getOrCreate({
+          data: {
+            starts_at: new Date().toISOString(),
+          },
+        });
+      }
+  
+      router.push(`/meeting/${meetingId}?personal=true`);
+    };
+  
+  
   if (!client || !user) return <Loader />;
 
   const meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${callDetail?.id}`;
@@ -170,7 +196,7 @@ const MeetingTypeList = () => {
         title="Start an Instant Meeting"
         className="text-center"
         buttonText="Start Meeting"
-        handleClick={createMeeting}
+        handleClick={startRoom}
       />
     </section>
   );
