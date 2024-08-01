@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-
 import { cn } from '@/lib/utils';
 
 interface HomeCardProps {
@@ -21,11 +20,13 @@ const HomeCard = ({ className, img, title, description, handleClick }: HomeCardP
       )}
       onClick={handleClick}
     >
-      <div className="flex-center glassmorphism size-12 rounded-[10px]">
-        <Image src={img} alt="meeting" width={27} height={27} />
+      <div className="flex justify-center items-center mb-4 h-full">
+        <div className="w-full h-[150px] relative">
+          <Image src={img} alt="meeting" layout="fill" objectFit="contain" />
+        </div>
       </div>
-      
-      <div className="flex flex-col gap-2">
+
+      <div className="flex flex-col gap-2 text-center">
         <h1 className="text-2xl font-bold">{title}</h1>
         <p className="text-lg font-normal">{description}</p>
       </div>
