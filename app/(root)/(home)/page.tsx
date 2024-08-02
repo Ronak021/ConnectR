@@ -27,8 +27,8 @@ const Home = () => {
           
           <div className="flex flex-col gap-2 py-6">
             {/* display real time date  */}
-            <h1 className="text-4xl font-extrabold lg:text-6xl">{time}</h1>
-            <p className="text-lg font-medium text-sky-1 lg:text-1xl">{date}</p>
+{/*             <h1 className="text-4xl font-extrabold lg:text-6xl">{time}</h1> */}
+            <p className="text-lg py-5 font-medium text-sky-1 lg:text-1xl">{date}</p>
           </div>
           <div>
             {/* display quote */}
