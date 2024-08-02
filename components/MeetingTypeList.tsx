@@ -70,7 +70,25 @@ const MeetingTypeList = () => {
    
 
    
+    const meetingId = user?.id;
   
+    const { call } = useGetCallById(meetingId!);
+  
+    const startRoom = async () => {
+      if (!client || !user) return;
+  
+      const newCall = client.call("default", meetingId!);
+  
+      if (!call) {
+        await newCall.getOrCreate({
+          data: {
+            starts_at: new Date().toISOString(),
+          },
+        });
+      }
+  
+      router.push(`/meeting/${meetingId}?personal=true`);
+    };
   
   
   if (!client || !user) return <Loader />;
@@ -178,7 +196,7 @@ const MeetingTypeList = () => {
         title="Start an Instant Meeting"
         className="text-center"
         buttonText="Start Meeting"
-        handleClick={createMeeting}
+        handleClick={startRoom}
       />
     </section>
   );
