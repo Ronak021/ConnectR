@@ -82,7 +82,7 @@ const MeetingSetup = ({
           setIsSetupComplete(true);
         }}
       >
-        Join meeting
+          Join meeting
       </Button>
     </div>
   );
